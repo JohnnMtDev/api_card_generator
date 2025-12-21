@@ -1,0 +1,80 @@
+  :root{
+            
+        --bg-color:rgb(58, 58, 58);
+        --white-mode: rgb(192, 192, 192);
+        }
+        /*Modo oscuro*/
+        .dark{
+            background: var(--bg-color);
+            color:var(--white-mode)
+        }
+        #d_switch {
+            appearance: none;
+            background-color: transparent;
+            border: 0.125em solid #1A1A1A;
+            border-radius: 0.9375em;
+            box-sizing: border-box;
+            color: #1A1A1A;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: normal;
+            margin: 0;
+            min-height: 3.75em;
+            padding: 1em 2.3em;
+            text-align: center;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+            user-select: none;
+            will-change: transform;
+            }
+            #d_switch:hover {
+                color: #fff;
+                background-color: #1A1A1A;
+                box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+                transform: translateY(-2px);
+}
+
+            .dark #d_switch {
+            border-color: #f1f1f1;
+            color: #f1f1f1;
+            }
+
+            .dark #d_switch:hover {
+            background-color: #f1f1f1;
+            color: #1A1A1A;
+            box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
+}
+    
+
+
+        .toolbar {
+            display: flex;
+            justify-content: center;
+            margin: 1.5em 0;
+        }
+
+        
+        /*cartas*/
+        #cards {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1em;
+            margin-top: 1em;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+        border-radius: 1em;
+        background-color: var(--bg-color); /* o cualquier color */
+        padding: 10px;
+        text-align: center;
+        color: var(--white-mode);
+        }
+        .card:hover {
+        transform: scale(1.05);
+        transition: 0.3s;
+        }   
