@@ -1,80 +1,179 @@
-  :root{
-            
-        --bg-color:rgb(58, 58, 58);
-        --white-mode: rgb(192, 192, 192);
-        }
-        /*Modo oscuro*/
-        .dark{
-            background: var(--bg-color);
-            color:var(--white-mode)
-        }
-        #d_switch {
-            appearance: none;
-            background-color: transparent;
-            border: 0.125em solid #1A1A1A;
-            border-radius: 0.9375em;
-            box-sizing: border-box;
-            color: #1A1A1A;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: normal;
-            margin: 0;
-            min-height: 3.75em;
-            padding: 1em 2.3em;
-            text-align: center;
-            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-            user-select: none;
-            will-change: transform;
-            }
-            #d_switch:hover {
-                color: #fff;
-                background-color: #1A1A1A;
-                box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-                transform: translateY(-2px);
+:root {
+  /* =========================
+     Design tokens
+     ========================= */
+
+  /* Dark mode */
+  --bg-dark: rgb(28, 24, 38);
+  --card-dark: rgba(90, 70, 140, 0.25);
+  --text-dark: rgb(245, 242, 250);
+
+  /* Light mode */
+  --bg-light: rgb(242, 238, 248);
+  --card-light: rgba(255, 255, 255, 0.65);
+  --text-light: rgb(45, 38, 60);
+
+  /* Shared */
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --blur: 16px;
+
+  --shadow-dark: 0 12px 30px rgba(0, 0, 0, 0.35);
+  --shadow-light: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+  --font-system: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-            .dark #d_switch {
-            border-color: #f1f1f1;
-            color: #f1f1f1;
-            }
+/* =========================
+   Reset & base
+   ========================= */
 
-            .dark #d_switch:hover {
-            background-color: #f1f1f1;
-            color: #1A1A1A;
-            box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
+* {
+  box-sizing: border-box;
 }
-    
 
+body {
+  margin: 0;
+  font-family: var(--font-system);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        .toolbar {
-            display: flex;
-            justify-content: center;
-            margin: 1.5em 0;
-        }
+/* =========================
+   Themes
+   ========================= */
 
-        
-        /*cartas*/
-        #cards {
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
 
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1em;
-            margin-top: 1em;
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-        }
-        .card {
-        border-radius: 1em;
-        background-color: var(--bg-color); /* o cualquier color */
-        padding: 10px;
-        text-align: center;
-        color: var(--white-mode);
-        }
-        .card:hover {
-        transform: scale(1.05);
-        transition: 0.3s;
-        }   
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+/* =========================
+   Toolbar & switch
+   ========================= */
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0;
+}
+
+#d_switch {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.8em 2em;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(.23, 1, 0.32, 1);
+}
+
+#d_switch:hover {
+  transform: translateY(-2px);
+}
+
+/* Light hover */
+body.light #d_switch:hover {
+  background-color: var(--text-light);
+  color: white;
+  box-shadow: var(--shadow-light);
+}
+
+/* Dark hover */
+body.dark #d_switch:hover {
+  background-color: var(--text-dark);
+  color: var(--bg-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2em;
+  padding: 1em;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* =========================
+   Cards – iOS Glass style
+   ========================= */
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: 1.2em;
+  text-align: center;
+
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Dark cards */
+body.dark .card {
+  background-color: var(--card-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+/* Light cards */
+body.light .card {
+  background-color: var(--card-light);
+  box-shadow: var(--shadow-light);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+.card h3 {
+  margin: 0 0 0.4em;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* =========================
+   Responsive – 3 → 2 → 1
+   ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  #cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  #cards {
+    grid-template-columns: 1fr;
+  }
+}
