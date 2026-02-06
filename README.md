@@ -1,48 +1,58 @@
-# 🛸 Rick & Morty Characters Gallery
+🛸 Rick & Morty Characters Gallery
 
-Aplicación web desarrollada en **JavaScript Vanilla** que consume la **Rick and Morty API** para mostrar personajes en formato de tarjetas, con **modo oscuro/claro** y **paginación personalizada**.
+A web application developed in Vanilla JavaScript that consumes the Rick and Morty API to display characters as cards, featuring dark/light mode and custom pagination.
 
-Proyecto creado con el objetivo de practicar **consumo de APIs**, **manipulación del DOM**, **gestión de estado** y **UI moderna**, sin usar frameworks ni librerías externas.
+This project was created to practice API consumption, DOM manipulation, state management, and modern UI design, without using frameworks or external libraries.
 
----
+✨ Features
 
-## ✨ Características
+🔗 REST API consumption (Rick and Morty API)
 
-- 🔗 Consumo de API REST (Rick and Morty API)
-- 🧩 Renderizado dinámico de tarjetas
-- 🌗 Modo Dark / Light con botón toggle
-- 🔢 Paginación personalizada con botones tipo *pill*
-- 📱 Diseño responsive (desktop, tablet y mobile)
-- ♿ Mejoras de accesibilidad (`aria-current`, reduced motion)
-- 🎨 UI moderna con blur, sombras y transiciones suaves
+🧩 Dynamic card rendering
 
----
+🌗 Dark / Light mode with toggle button
 
-## 🧠 Qué se practica en este proyecto
+🔢 Custom pagination with pill-style buttons
 
-- Uso de `fetch()` y manejo de promesas
-- Manipulación del DOM con JavaScript puro
-- Gestión de estado (datos cargados, página actual)
-- Renderizado dinámico y reutilizable
-- Paginación sin librerías
-- Variables CSS (`:root`)
-- Dark mode mediante `classList.toggle()`
+📱 Responsive design (desktop, tablet, and mobile)
 
----
+♿ Accessibility improvements (aria-current, reduced motion)
 
-## 🛠️ Tecnologías utilizadas
+🎨 Modern UI with blur effects, shadows, and smooth transitions
 
-- **HTML5**
-- **CSS3**
-  - CSS Variables
-  - Grid Layout
-  - Media Queries
-- **JavaScript (Vanilla)**
-- **Rick and Morty API**
+🧠 What This Project Practices
 
----
+Using fetch() and handling promises
 
-## 📦 Estructura del proyecto
+DOM manipulation with pure JavaScript
+
+State management (loaded data, current page)
+
+Dynamic and reusable rendering
+
+Pagination without libraries
+
+CSS variables (:root)
+
+Dark mode using classList.toggle()
+
+🛠️ Technologies Used
+
+HTML5
+
+CSS3
+
+CSS Variables
+
+Grid Layout
+
+Media Queries
+
+JavaScript (Vanilla)
+
+Rick and Morty API
+
+## 📦  Project Structure
 
 ├── index.html
 ├── styles.css
@@ -51,15 +61,21 @@ Proyecto creado con el objetivo de practicar **consumo de APIs**, **manipulació
 
 ---
 
-## 🚀 Funcionamiento
+🚀 How It Works
 
-1. Al cargar la aplicación se realiza una petición a la Rick and Morty API.
-2. Los personajes se almacenan en memoria.
-3. Se renderizan **6 tarjetas por página**.
-4. La paginación se genera dinámicamente según el total de personajes.
-5. El usuario puede:
-   - Cambiar de página
-   - Alternar entre modo oscuro y claro
+When the application loads, it makes a request to the Rick and Morty API.
+
+The characters are stored in memory.
+
+6 cards per page are rendered.
+
+Pagination is generated dynamically based on the total number of characters.
+
+The user can:
+
+Navigate between pages
+
+Toggle between dark and light mode
 
 ---
 
